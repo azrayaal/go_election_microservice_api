@@ -15,7 +15,7 @@ func main() {
 	// ARTICLE
 	router.GET("/api/v1/articles", articlecontrollers.Index)
 	// router.GET("/api/v1/article/:id", articlecontrollers.ShowDetail)
-	// ss
+
 	// PARTY
 	router.GET("/api/v1/parties", partycontrollers.Index)
 
