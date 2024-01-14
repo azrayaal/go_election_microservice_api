@@ -9,7 +9,7 @@ import (
 
 func Index(c *gin.Context) {
 	var candidate []models.Candidate
-	models.DB.Find(&candidate)
+	models.DB.Preload("Party").Find(&candidate)
 
 	c.JSON(http.StatusOK, gin.H{"candidate": candidate})
 }
