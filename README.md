@@ -1,103 +1,22 @@
-# How To Use Pemilu Backend Using Postman
-
-## Authorization
-
-1. Click tab authorization on postman
-2. Choose Type "Bearer Token" on the left
-3. Insert token on the right
+# How To Use Election Microservice Backend Using Postman
 
 ## User API
 
-### Register User
+### Get all User
 
-- URL: http://localhost:4000/api/v1/user/register
-- Method: `POST`
-- Request Body:
-
-```
-{
-  "fullName": "admGuest",
-  "email": "admGuest@gmail.com",
-  "password": "rahasia",
-  "address": "Namek",
-  "gender": "male",
-  "userName": "admGuest"
-}
-```
-
-### Login User
-
-- URL: http://localhost:4000/api/v1/user/login
-- Method: `POST`
-- Request Body:
-
-```
-{
-  "email": "admGuest@gmail.com",
-  "password": "rahasia"
-}
-```
-
-### Get detail User
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/user/:id
+- URL: http://localhost:8080/api/v1/users
 - Method: `GET`
 - Request Body:
 
 ```
 {
-  "id": 2,
-    "fullName": "admGuest",
-    "email": "admGuest@gmail.com",
-    "gender": "laki laki",
-    "userName": "admGuest",
-    "article": [
-        {
-            "id": 16,
-            "title": "ARTIKEL BARU 1",
-            "image": "412520687_829427478869516_382939006133828220_n-1705136482473.png",
-            "date": "2023-07-01T00:00:00.000Z",
-            "description": "Lorem ipsum dolor amet wak waw"
-        }
-    ],
-    "vote": [
-        {
-            "id": 2
-        }
-    ]
-}
-```
-
-### Update User
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/user/:id
-- Method: `PUT`
-- Request Body:
-
-```
-{
-  "fullName": "admUpdate",
-  "password": "rahasia",
-  "address": "gang masjid",
-  "gender": "laki laki"
-}
-```
-
-### Update User
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/user/:id
-- Method: `DELETE`
-- Request Body:
-
-```
-{
-  "message": "User has been removed"
+    "id": 1,
+    "full name": "admAzra",
+    "email": "admAzra@gmail.com",
+    "password": "rahasia",
+    "address": "jalan jalan setapak dihiraukan saja",
+    "gender": "male",
+    "userName": "admAzra"
 }
 ```
 
