@@ -7,9 +7,16 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// func Index(c *gin.Context) {
+// 	var article []models.Article
+// 	models.DB.Preload("User").Find(&article)
+
+// 	c.JSON(http.StatusOK, gin.H{"article": article})
+// }
+
 func Index(c *gin.Context) {
 	var article []models.Article
-	models.DB.Find(&article)
+	models.DB.Preload("User").Find(&article)
 
 	c.JSON(http.StatusOK, gin.H{"article": article})
 }

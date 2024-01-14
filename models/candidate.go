@@ -7,5 +7,5 @@ type Candidate struct {
 	Number         int64  `gorm:"type:varchar(300)" json:"Number"`
 	Vision_mission string `gorm:"type:varchar(300)" json:"Vision Mission"`
 	PartyID        uint   `json:"party_id"`
-	Party          Party  `gorm:"foreignKey:PartyID" json:"party"`
+	Party          Party  `gorm:"foreignKey:PartyID" json:"Party Data"`
 }
