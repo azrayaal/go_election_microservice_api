@@ -42,7 +42,6 @@
             "content": "INI ISI DARI CONTENT ARTICLE 1",
             "date": "2024-01-09",
             "author": "admAzra",
-            "user_id": 1,
             "author detail": {
                 "id": 1,
                 "full name": "admAzra",
