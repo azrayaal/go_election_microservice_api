@@ -137,50 +137,43 @@
 
 `Authorization`
 
-- URL: http://localhost:4000/api/v1/voters
+- URL: http://localhost:8080/api/v1/voters
 - Method: `GET`
 - Request Body:
 
 ```
-[
-    {
-        "userid": 1,
-        "voter_name": "admazra",
-        "voter_address": "gang masjid",
-        "voter_gender": "male",
-        "candidateid": 1,
-        "candidatename": "Mimiko Hasaba"
-    },
-    {
-        "userid": 2,
-        "voter_name": "admGuest",
-        "voter_address": "namek",
-        "voter_gender": "male",
-        "candidateid": 2,
-        "candidatename": "IPPO"
-    }
-]
+{
+    "voter": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "Voter Detail": {
+                "id": 1,
+                "full name": "admAzra",
+                "email": "admAzra@gmail.com",
+                "password": "rahasia",
+                "address": "jalan jalan setapak dihiraukan saja",
+                "gender": "male",
+                "userName": "admAzra"
+            },
+            "candidate_id": 1,
+            "Voted Candidate": {
+                "id": 1,
+                "Candidate Name": "JAJANG MIHARJANG",
+                "Image": "img.jpg",
+                "Number": 1,
+                "Vision Mission": "MENCARI KEBENARAN TENTANG KESALAHAN",
+                "party_id": 1,
+                "Party Data": {
+                    "id": 0,
+                    "Party Name": "",
+                    "Image": "",
+                    "Chairman": "",
+                    "Vision Mission": "",
+                    "Address": ""
+                }
+            }
+        }
+    ]
+}
 ```
-
-### Create new voter
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/voter
-- Method: `POST`
-- Request Body:
-
-```
-[
-    {
-        "candidateId": 1,
-        "voter_name": "admazra",
-        "voter_address": "gang masjid",
-        "voter_gender": "male",
-        "candidateid": 1,
-        "candidatename": "Mimiko Hasaba"
-    }
-]
-```
-
-`The voter data, including voter name, voter address, etc., is retrieved from the user data obtained through user login authorization`
