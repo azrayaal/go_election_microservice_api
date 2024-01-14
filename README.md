@@ -63,7 +63,7 @@
 
 `No Authorization`
 
-- URL: http://localhost:4000/api/v1/parties
+- URL: http://localhost:8080/api/v1/parties
 - Method: `GET`
 - Request Body:
 
@@ -98,189 +98,37 @@
 }
 ```
 
-`Candidate data will be shown after the admin creates a candidate(paslon)`
-
-### Create new Party
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/party
-- Method: `POST`
-- Request Body:
-
-```
-{
-  "name": "ASTA",
-  "image": "1704718751443.png",
-  "number": 3,
-  "vision_mission": "MENGHANCURKAN NEGARA TANAH",
-  "address": "KERAJAAN SIHIR"
-}
-```
-
-### Get detail Party
-
-`No Authorization`
-
-- URL: http://localhost:4000/api/v1/party/:id
-- Method: `GET`
-- Request Body:
-
-```
-{
-    "id": 1,
-    "name": "GETO UHUY",
-    "image": "412520687_829427478869516_382939006133828220_n-1704695129411.png",
-    "chairman": "Suguru Geto",
-    "vision_mission": "In publishing and graphic design",
-    "address": "Jalan Veteran, Jakarta Pusat",
-    "candidates": [
-        {
-            "id": 1,
-            "name": "Mimiko Hasaba",
-            "image": "LOGO-1704700723367.png",
-            "number": 1,
-            "vision_mission": "MENGHENTIKAN INVASI NEGARA API"
-        }
-    ]
-}
-```
-
-### Update Party
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/party/:id
-- Method: `PUT`
-- Request Body:
-
-```
-{
-  "name": "Party UPDATE",
-  "image": "1704718751443.png",
-  "chairman": "BULALA",
-  "vision_mission": "MENGHANCURKAN NEGARA TANAH",
-  "address": "KERAJAAN SIHIR"
-}
-```
-
-### Delete Party
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/party/:id
-- Method: `DELETE`
-- Request Body:
-
-```
-{
-  message: "Party has been removed"
-}
-```
-
 ## Candidate(paslon) API
 
 ### Get all Candidates
 
 `No Authorization`
 
-- URL: http://localhost:4000/api/v1/candidates
+- URL: http://localhost:8080/api/v1/candidates
 - Method: `GET`
 - Request Body:
 
 ```
-[
-    {
-        "candidate_id": 1,
-        "candidate_name": "Mimiko Hasaba",
-        "candidate_image": "FIFA LOGO-1704700723367.png",
-        "candidate_vision_mission": "MENGHENTIKAN INVASI NEGARA API",
-        "partyid": 1,
-        "partyname": "GETO UHUY"
-    },
-    {
-        "candidate_id": 2,
-        "candidate_name": "IPPO",
-        "candidate_image": "FIFA LOGO-1704702416331.png",
-        "candidate_vision_mission": "MENINJU SEMUA ORG YG ADA",
-        "partyid": 2,
-        "partyname": "KAMOGAWA GYM"
-    }
-]
-```
-
-### Create new Candidate
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/candidate
-- Method: `POST`
-- Request Body:
-
-```
-   {
-        "name": "IPPO",
-        "image": "FIFA LOGO-1704702416331.png",
-        "number": 3,
-        "vision_mission": "MENINJU SEMUA ORG YG ADA",
-        "partyid": 2
-    }
-```
-
-`Make sure to send the partyId using the id from the party to associate the candidate with the correct party`
-
-### Get detail Candidate
-
-`No Authorization`
-
-- URL: http://localhost:4000/api/v1/candidate/:id
-- Method: `GET`
-- Request Body:
-
-```
-   {
-    "id": 1,
-    "name": "AANG",
-    "image": "FIFA LOGO-1704700723367.png",
-    "vision_mission": "MENGHENTIKAN INVASI NEGARA API",
-    "party": {
-        "id": 1,
-        "name": "GETO UHUY",
-        "vision_mission": "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a webpage or publication,"
+{
+    "candidate": [
+        {
+            "id": 1,
+            "Candidate Name": "JAJANG MIHARJANG",
+            "Image": "img.jpg",
+            "Number": 1,
+            "Vision Mission": "MENCARI KEBENARAN TENTANG KESALAHAN",
+            "party_id": 1,
+            "Party Data": {
+                "id": 1,
+                "Party Name": "JAMIHA",
+                "Image": "jpg.jpg",
+                "Chairman": "DADANG SUGENEP",
+                "Vision Mission": "MELANJUTKAN WARISAN BAPAK",
+                "Address": "LAMPUNG"
+            }
         }
-    }
-```
-
-### Update Candidate
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/candidate/:id
-- Method: `PUT`
-- Request Body:
-
-```
-   {
-        "name": "PASLON UPDATE",
-        "image": "FIFA LOGO-1704702416331.png",
-        "number": 3,
-        "vision_mission": "MENINJU SEMUA ORG YG ADA",
-        "partyid": 2
-    }
-```
-
-### Delete Candidate
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/candidate/:id
-- Method: `DELETE`
-- Request Body:
-
-```
-   {
-        message: "Candidate has been removed"
-    }
+    ]
+}
 ```
 
 ## Voter API
