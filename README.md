@@ -2,7 +2,9 @@
 
 ## User API
 
-### Get all User
+### Get all Users
+
+`No Authorization`
 
 - URL: http://localhost:8080/api/v1/users
 - Method: `GET`
@@ -26,96 +28,32 @@
 
 `No Authorization`
 
-- URL: http://localhost:4000/api/v1/articles
-- Method: `GET`
-- Request Body:
-
-```
-[
-    {
-        "id": 1,
-        "title": "KUCING JEMPOLAN",
-        "date": "2023-07-01T00:00:00.000Z",
-        "author": "admazra"
-    },
-    {
-        "id": 2,
-        "title": "NEW ARTICLE",
-        "date": "2023-07-01T00:00:00.000Z",
-        "author": "admGuest"
-    }
-]
-```
-
-### Create new Article
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/article
-- Method: `POST`
-- Request Body:
-
-```
-{
-  "title": "admGuest@gmail.com",
-  "image": "rahasia",
-  "date": 2023-07-01,
-  "description": "Lorem ipsum dolor amet wak waw"
-}
-```
-
-`Author and userId obtained from isLogin trough Authorization`
-
-### Get detail Article
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/article/:id
+- URL: http://localhost:8080/api/v1/articles
 - Method: `GET`
 - Request Body:
 
 ```
 {
-   "id": 16,
-    "title": "ARTIKEL BARU 1",
-    "date": "2023-07-01T00:00:00.000Z",
-    "author": "admGuest",
-    "description": "Lorem ipsum dolor amet wak waw",
-    "users": {
-        "id": 2,
-        "fullName": "admGuest"
-    }
-}
-```
-
-### Update Article
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/article/:id
-- Method: `PUT`
-- Request Body:
-
-```
-{
-    "title": "ARTIKEL UPDATE",
-    "image": "jpg.jpg",
-    "date": "2023-07-01T00:00:00.000Z",
-    "description": "Lorem ipsum dolor amet wak waw",
-}
-```
-
-### Delete Article
-
-`Authorization`
-
-- URL: http://localhost:4000/api/v1/article/:id
-- Method: `DELETE`
-- Request Body:
-
-```
-{
-    message: "Article has been removed"
+    "article": [
+        {
+            "id": 1,
+            "title": "ARTICLE 1",
+            "image": "impg.jpg",
+            "content": "INI ISI DARI CONTENT ARTICLE 1",
+            "date": "2024-01-09",
+            "author": "admAzra",
+            "user_id": 1,
+            "author detail": {
+                "id": 1,
+                "full name": "admAzra",
+                "email": "admAzra@gmail.com",
+                "password": "rahasia",
+                "address": "jalan jalan setapak dihiraukan saja",
+                "gender": "male",
+                "userName": "admAzra"
+            }
+        }
+    ]
 }
 ```
 
@@ -130,42 +68,34 @@
 - Request Body:
 
 ```
-[
-    {
-        "id": 1,
-        "name": "GETO UHUY",
-        "image": "17011.png",
-        "chairman": "Suguru Geto",
-        "vision_mission": "In publishing and graphic design",
-        "address": "Jalan Veteran, Jakarta Pusat. Map: Klik Disini. HTM: Free. Buka Tutup: 09.00 – 16.00 WIB",
-        "candidates": [
-            {
-                "id": 1,
-                "name": "Mimiko Hasaba",
-                "image": "LOGO-1704700723367.png",
-                "number": 1,
-                "vision_mission": "MENGHENTIKAN INVASI NEGARA API"
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "name": "KAMOGAWA GYM",
-        "image": "17011.png",
-        "chairman": "Genji Kamogawa",
-        "vision_mission": "In publishing and graphic design",
-        "address": "Jalan Veteran, Jakarta Pusat. Map: Klik Disini. HTM: Free. Buka Tutup: 09.00 – 16.00 WIB",
-        "candidates": [
-            {
-                "id": 2,
-                "name": "IPPO",
-                "image": "LOGO-1704702416331.png",
-                "number": 2,
-                "vision_mission": "MENINJU SEMUA ORG YG ADA"
-            }
-        ]
-    }
-]
+{
+    "party": [
+        {
+            "id": 1,
+            "Party Name": "JAMIHA",
+            "Image": "jpg.jpg",
+            "Chairman": "DADANG SUGENEP",
+            "Vision Mission": "MELANJUTKAN WARISAN BAPAK",
+            "Address": "LAMPUNG"
+        },
+        {
+            "id": 2,
+            "Party Name": "AGENI",
+            "Image": "gambar.jpg",
+            "Chairman": "AGUNI",
+            "Vision Mission": "MEMUSNAHKAN SEMUA IBLIS",
+            "Address": "Di tengah pulau Dewata"
+        },
+        {
+            "id": 3,
+            "Party Name": "PARTAI 3",
+            "Image": "3.jpg",
+            "Chairman": "ULTRAMAN TIGA",
+            "Vision Mission": "MENGALAHKAN SEMuA KAIJU",
+            "Address": "Gunung Salak"
+        }
+    ]
+}
 ```
 
 `Candidate data will be shown after the admin creates a candidate(paslon)`
